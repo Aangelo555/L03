@@ -1,23 +1,33 @@
 import React from 'react';
-import { View, Text } from 'react-native';
-
-const Movie = ({ title, year }) => {
-  return (
-      <View>
-        <Text></Text>
-        <Text>
-          Movie: {title} {year}
-        </Text>
-      </View>
-  );
-};
+import { ScrollView } from 'react-native';
+import Movie from './components/Movie';
 
 const AllMovies = () => {
-  return (
-      <View>
-        <Movie title="Doctor Sleep" year={2019} />
-      </View>
-  );
+    return (
+        <ScrollView>
+            <Movie
+                title="Doctor Sleep"
+                year={2019}
+                icon_name="skull"
+                icon_color="red"
+                poster={require("./img/doctor-sleep.jpg")}
+            />
+            <Movie
+                title="Midway"
+                year={2020}
+                icon_name="person-rifle"
+                icon_color="blue"
+                poster={require("./img/midway.jpg")}
+            />
+            <Movie
+                title="Avatar"
+                year={2009}
+                icon_name="film"
+                icon_color="green"
+                poster={{ uri: 'https://static1.srcdn.com/wordpress/wp-content/uploads/2022/12/avatar-the-way-of-water-poster.jpg' }}
+            />
+        </ScrollView>
+    );
 };
 
 export default AllMovies;
